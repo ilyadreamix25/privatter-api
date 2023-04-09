@@ -21,4 +21,16 @@ public class ServerConfiguration {
     public String getVersion() {
         return version;
     }
+
+    public void setHost(String host) {
+        this.host = host;
+    }
+
+    public void setPort(String port) {
+        this.port = port;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
+    }
 }

@@ -1,42 +1,26 @@
 package com.privatter.api.user.dto.communication;
 
-import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Pattern;
 import org.hibernate.validator.constraints.Length;
 
 public class UserSignUpRequestDto {
-    @NotNull
+    @NotEmpty(message = "Field \"authKey\" must not be empty")
     private String authKey;
 
-    @NotNull
+    @NotEmpty(message = "Field \"authValue\" must not be empty")
     private String authValue;
 
     private String captchaToken;
 
-    @NotNull
-    @Pattern(regexp = "\\A[A-Za-z\\d_]+\\z")
-    @Length(min = 4, max = 36)
+    @NotEmpty(message = "Field \"authValue\" must not be empty")
+    @Pattern(regexp = "\\A[A-Za-z\\d_]+\\z", message = "Field \"profileNickname\" is invalid")
+    @Length(min = 4, max = 24, message = "Field \"profileNickname\" must be between 4 and 24 characters long")
     private String profileNickname;
 
     private String profileDescription;
 
     private String profileIconUrl;
-
-    public UserSignUpRequestDto(
-        String authKey,
-        String authValue,
-        String captchaToken,
-        String profileNickname,
-        String profileDescription,
-        String profileIconUrl
-    ) {
-        this.authKey = authKey;
-        this.authValue = authValue;
-        this.captchaToken = captchaToken;
-        this.profileNickname = profileNickname;
-        this.profileDescription = profileDescription;
-        this.profileIconUrl = profileIconUrl;
-    }
 
     public String getAuthKey() {
         return authKey;
