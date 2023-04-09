@@ -1,10 +1,10 @@
-package com.privatter.api.user.model;
+package com.privatter.api.user.dto.communication;
 
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import org.hibernate.validator.constraints.Length;
 
-public class UserSignUpBody {
+public class UserSignUpRequestDto {
     @NotNull
     private String authKey;
 
@@ -22,7 +22,7 @@ public class UserSignUpBody {
 
     private String profileIconUrl;
 
-    public UserSignUpBody(
+    public UserSignUpRequestDto(
         String authKey,
         String authValue,
         String captchaToken,
