@@ -13,5 +13,14 @@ public class UserController {
     private UserService service;
 
     @PostMapping("sign-up")
-    public void signUp(@Valid @RequestBody UserSignUpRequestDto body, @Param("method") String method) {}
+    public void signUp(
+        @Valid
+        @RequestBody
+        UserSignUpRequestDto body,
+
+        @Param("method")
+        String method
+    ) {
+
+    }
 }

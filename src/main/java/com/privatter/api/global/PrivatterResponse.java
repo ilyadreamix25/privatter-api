@@ -69,9 +69,13 @@ public enum PrivatterResponse {
 
     @NotNull
     public static PrivatterShortResponseDto parseEmailSent(String address) {
-        var message = OK.value;
-        message.message = PrivatterMessage.SENT_EMAIL.value.formatted(address);
-        return message;
+        return new PrivatterShortResponseDto(
+            PrivatterMessage.SENT_EMAIL.value.formatted(address),
+            PrivatterStatusCode.SENT_EMAIL.value,
+            false,
+            null,
+            null
+        );
     }
 
     @NotNull

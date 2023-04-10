@@ -14,7 +14,7 @@ dependencies {
 
     runtimeOnly("org.postgresql:postgresql")
 
-    implementation("com.squareup.okhttp3:okhttp:4.10.0")
+    implementation("org.jetbrains:annotations:24.0.0")
     implementation("javax.mail:mail:1.4.7")
 }
 
